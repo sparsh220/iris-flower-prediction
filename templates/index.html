@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iris Flower Species Prediction</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #eee7ff,
+                #fdf0f5,
+                #e5f3e9
+            );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 620px;
+            background: white;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 15px 45px rgba(76, 45, 120, 0.16);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #5b35a5;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #77718a;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .flower {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            color: #393052;
+            font-weight: bold;
+            margin-bottom: 9px;
+            font-size: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 2px solid #e2d9f3;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #30264a;
+            background-color: #fdfcff;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #8754d6;
+            box-shadow: 0 0 0 4px rgba(135, 84, 214, 0.12);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #8650d5, #6335b4);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 53, 180, 0.25);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 24px;
+            color: #9189a1;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 26px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <div class="flower">🌸</div>
+            <h1>Iris Flower Prediction</h1>
+            <p>
+                Enter the flower measurements below
+                to predict its species.
+            </p>
+        </header>
+
+        <form action="/predict" method="POST"> 
+
+            <div class="form-group">
+                <label for="sepal_length">Sepal Length (cm)</label>
+                <input
+                    type="number"
+                    id="sepal_length"
+                    name="sepal_length"
+                    step="any"
+                    min="0"
+                    placeholder="e.g. 5.1"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="sepal_width">Sepal Width (cm)</label>
+                <input
+                    type="number"
+                    id="sepal_width"
+                    name="sepal_width"
+                    step="any"
+                    min="0"
+                    placeholder="e.g. 3.5"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="petal_length">Petal Length (cm)</label>
+                <input
+                    type="number"
+                    id="petal_length"
+                    name="petal_length"
+                    step="any"
+                    min="0"
+                    placeholder="e.g. 1.4"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="petal_width">Petal Width (cm)</label>
+                <input
+                    type="number"
+                    id="petal_width"
+                    name="petal_width"
+                    step="any"
+                    min="0"
+                    placeholder="e.g. 0.2"
+                    required>
+            </div>
+
+            <button type="submit">
+                🌸 Predict Species
+            </button>
+
+        </form>
+
+        <footer>
+            Machine Learning Project · Random Forest Classifier
+        </footer>
+
+    </main>
+
+</body>
+</html>
